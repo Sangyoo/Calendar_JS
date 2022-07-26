@@ -11,6 +11,18 @@ console.log("hello, vanilla.");
 // 좌측 화살표를 클릭 했을때, 이전 달의 요일 및 날짜 표기
 // 특정 날짜를 클릭 했을때, 상단의 요일 및 날짜 반영하기
 
+
+// setMonth 함수는 로직이 특이하다.
+// The current day of month will have an impact on the behavior of this method. 
+// Conceptually it will add the number of days given by the current day of the month
+// to the 1st day of the new month specified as the parameter, to return the new date. 
+// For example, if the current value is 31st January 2016, 
+// calling setMonth with a value of 1 will return 2nd March 2016. 
+// This is because in 2016 February had 29 days.
+// 요약하면 2016년 1월 31일의날짜에서 setMonth(1)을 하게 되면
+// 날짜를 2016년 2월 1일로 바꾸고 현재 날짜(31)을 더하게 되서
+// 결과는 2016년 3월 2일이 나온다. 2016년 2월은 29일까지 있기 때문에
+
 const abcs = document.querySelectorAll("tr>td");
 const leftBtn = document.querySelector(".left-btn");
 const rightBtn = document.querySelector(".right-btn");
